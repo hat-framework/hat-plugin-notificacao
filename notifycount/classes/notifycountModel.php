@@ -5,9 +5,20 @@ class notificacao_notifycountModel extends \classes\Model\Model {
     public $tabela = "notificacao_notifycount";
     public $pkey   = 'codusuario';
 
-    public function addNotify($codUsuario, $notify_name, $count) {
+    public function subNotify($codUsuario, $notify_name){
         $array               = $this->getArray($codUsuario);
         $method              = empty($array)?'insert':'editar';
+        $array[$notify_name] = (isset($array[$notify_name]))?$array[$notify_name]-1:0;;
+        $bool = $this->save($codUsuario, $array, $method);
+        return $bool;
+    }
+    
+    public function addNotify($codUsuario, $notify_name, $count = "") {
+        $array               = $this->getArray($codUsuario);
+        $method              = empty($array)?'insert':'editar';
+        if($count === ""){
+            $count = (isset($array[$notify_name]))?$array[$notify_name]+1:1;
+        }
         $array[$notify_name] = $count;
         $bool = $this->save($codUsuario, $array, $method);
         return $bool;
