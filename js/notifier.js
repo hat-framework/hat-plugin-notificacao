@@ -15,7 +15,7 @@ $(function(){
                        temp.html(response[i]);
                    }
                }
-               setTimeout(verifyNotifications, 60000);
+               //setTimeout(verifyNotifications, 60000);
            }
        });
     }
