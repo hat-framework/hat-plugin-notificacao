@@ -21,9 +21,47 @@ class notificacao_notifycountData extends \classes\Model\DataModel{
 	    ),
         ),
         
-        'notifys' => array(
-	    'name'     => 'Notificações',
-	    'type'     => 'text',
+        'name' => array(
+	    'name'     => 'Título',
+	    'type'     => 'varchar',
+            'size'     => 32,
+	    'grid'    => true,
+	    'display' => true,
+	    'pkey'    => true,
+        ),
+        
+        'common' => array(
+	    'name'     => 'Comum',
+	    'type'     => 'int',
+            'size'     => 5,
+            'default'  => 0,
+            'notnull'  => true,
+	    'grid'    => true,
+	    'display' => true,
+        ),
+        'attention' => array(
+	    'name'     => 'Atenção',
+	    'type'     => 'int',
+            'size'     => 5,
+            'default'  => 0,
+            'notnull'  => true,
+	    'grid'    => true,
+	    'display' => true,
+        ),
+        'important' => array(
+	    'name'     => 'Importante',
+	    'type'     => 'int',
+            'size'     => 5,
+            'default'  => 0,
+            'notnull'  => true,
+	    'grid'    => true,
+	    'display' => true,
+        ),
+        
+        'grupo' => array(
+	    'name'     => 'Grupo',
+	    'type'     => 'varchar',
+            'size'     => 32,
 	    'grid'    => true,
 	    'display' => true,
         ),
